@@ -1,0 +1,16 @@
+h3 route add default gw 10.0.0.1 h3-eth0
+h4 route add default gw 10.0.0.1 h4-eth0
+h5 route add default gw 100.0.0.25 h5-eth0
+h6 route add default gw 100.0.0.25 h6-eth0
+h7 route add default gw 100.0.0.25 h7-eth0
+h5 python /home/ik2220-assign-team9/application/sdn/dns_server20.py &
+h6 python /home/ik2220-assign-team9/application/sdn/dns_server21.py &
+h7 python /home/ik2220-assign-team9/application/sdn/dns_server22.py &
+h8 route add default gw 100.0.0.45 h8-eth0
+h9 route add default gw 100.0.0.45 h9-eth0
+h10 route add default gw 100.0.0.45 h10-eth0
+h8 python SimpleServer.py >> /tmp/http.log &
+h9 python SimpleServer.py >> /tmp/http.log &
+h10 python SimpleServer.py >> /tmp/http.log &
+h1 cp /dev/null /etc/resolv.conf
+h1 echo "nameserver 100.0.0.25" > /etc/resolv.conf

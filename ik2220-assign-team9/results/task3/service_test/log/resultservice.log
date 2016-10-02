@@ -1,0 +1,11 @@
+DNS server DIG test : PASS
+WWW server curl test : PASS
+WWW LB round robin test : PASS
+
+IDS test for allowed packets
+ARP PING test	        : PASS
+HTTP POST test     	: PASS
+HTTP PUT (allowed packet) test : PASS
+idstest blocked packets
+HTTP PUT (blocked packet) test : PASS
+HTTP GET blocking test : PASS

@@ -1,0 +1,14 @@
+===============LB2 Report=================
+Input Packet rate (pps) :  0.217037438958
+Output Packet rate (pps) :  0.372543541026
+ 
+Total # of input packets :  22
+Total # of output packets : 20
+ 
+Total # of ARP requests :  6
+Total # of ARP response :  4
+ 
+Total # of service packets : 0
+Total # of ICMP packets : 12
+Total # of dropped packets : 0
+=========================================

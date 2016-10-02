@@ -1,0 +1,126 @@
+IDS TEST : Allowed packets
+1. ARP & PING
+PING 100.0.0.45 (100.0.0.45) 56(84) bytes of data.
+64 bytes from 100.0.0.45: icmp_seq=2 ttl=255 time=3023 ms
+64 bytes from 100.0.0.45: icmp_seq=3 ttl=255 time=3024 ms
+64 bytes from 100.0.0.45: icmp_seq=4 ttl=255 time=3024 ms
+64 bytes from 100.0.0.45: icmp_seq=5 ttl=255 time=3024 ms
+64 bytes from 100.0.0.45: icmp_seq=6 ttl=255 time=3026 ms
+64 bytes from 100.0.0.45: icmp_seq=7 ttl=255 time=3018 ms
+
+--- 100.0.0.45 ping statistics ---
+10 packets transmitted, 6 received, 40% packet loss, time 9057ms
+rtt min/avg/max/mdev = 3018.508/3023.494/3026.430/2.817 ms, pipe 4
+2. HTTP POST
+* Rebuilt URL to: 100.0.0.45/
+* Hostname was NOT found in DNS cache
+*   Trying 100.0.0.45...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0* Connected to 100.0.0.45 (100.0.0.45) port 80 (#0)
+> POST / HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: 100.0.0.45
+> Accept: */*
+> Content-Length: 8
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 8 out of 8 bytes
+100     8    0     0    0     8      0      0 --:--:--  0:00:19 --:--:--     13. HTTP PUT
+* Rebuilt URL to: 100.0.0.45/
+* Hostname was NOT found in DNS cache
+*   Trying 100.0.0.45...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0* Connected to 100.0.0.45 (100.0.0.45) port 80 (#0)
+> PUT / HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: 100.0.0.45
+> Accept: */*
+> Content-Length: 10
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 10 out of 10 bytes
+100    10    0     0    0    10      0      0 --:--:--  0:00:11 --:--:--     1100    10    0     0    0    10      0      0 --:--:--  0:00:12 --:--:--     1100    10    0     0    0    10      0      0 --:--:--  0:00:13 --:--:--     1100    10    0     0    0    10      0      0 --:--:--  0:00:14 --:--:--     1100    10    0     0    0    10      0      0 --:--:--  0:00:15 --:--:--     1100    10    0     0    0    10      0      0 --:--:--  0:00:16 --:--:--     0100    10    0     0    0    10      0      0 --:--:--  0:00:17 --:--:--     0100    10    0     0    0    10      0      0 --:--:--  0:00:18 --:--:--     0100    10    0     0    0    10      0      0 --:--:--  0:00:19 --:--:--     0IDS TEST : Blocked packets
+4. HTTP PUT injection
+* Rebuilt URL to: 100.0.0.45/
+* Hostname was NOT found in DNS cache
+*   Trying 100.0.0.45...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0* Connected to 100.0.0.45 (100.0.0.45) port 80 (#0)
+> PUT / HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: 100.0.0.45
+> Accept: */*
+> Content-Length: 15
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 15 out of 15 bytes
+100    15    0     0  100    15      0      1  0:00:15  0:00:11  0:00:04     2100    15    0     0  100    15      0      1  0:00:15  0:00:12  0:00:03     2100    15    0     0  100    15      0      1  0:00:15  0:00:13  0:00:02     2100    15    0     0  100    15      0      1  0:00:15  0:00:14  0:00:01     2* Rebuilt URL to: 100.0.0.45/
+* Hostname was NOT found in DNS cache
+*   Trying 100.0.0.45...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0* Connected to 100.0.0.45 (100.0.0.45) port 80 (#0)
+> PUT / HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: 100.0.0.45
+> Accept: */*
+> Content-Length: 13
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 13 out of 13 bytes
+100    13    0     0  100    13      0      1  0:00:13  0:00:07  0:00:06     2100    13    0     0  100    13      0      1  0:00:13  0:00:08  0:00:05     2100    13    0     0  100    13      0      1  0:00:13  0:00:09  0:00:04     2100    13    0     0  100    13      0      1  0:00:13  0:00:10  0:00:03     2100    13    0     0  100    13      0      1  0:00:13  0:00:11  0:00:02     2100    13    0     0  100    13      0      1  0:00:13  0:00:12  0:00:01     0100    13    0     0    0    13      0      0 --:--:--  0:00:13 --:--:--     0100    13    0     0    0    13      0      0 --:--:--  0:00:14 --:--:--     0* Rebuilt URL to: 100.0.0.45/
+* Hostname was NOT found in DNS cache
+*   Trying 100.0.0.45...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0* Connected to 100.0.0.45 (100.0.0.45) port 80 (#0)
+  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0> PUT / HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: 100.0.0.45
+> Accept: */*
+> Content-Length: 6
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 6 out of 6 bytes
+100     6    0     0    0     6      0      0 --:--:--  0:00:07 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:08 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:09 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:10 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:11 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:12 --:--:--     0100     6    0     0    0     6      0      0 --:--:--  0:00:13 --:--:--     0100     6    0     0    0     6      0      0 --:--:--  0:00:14 --:--:--     0* Rebuilt URL to: 100.0.0.45/
+* Hostname was NOT found in DNS cache
+*   Trying 100.0.0.45...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0* Connected to 100.0.0.45 (100.0.0.45) port 80 (#0)
+> PUT / HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: 100.0.0.45
+> Accept: */*
+> Content-Length: 6
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 6 out of 6 bytes
+100     6    0     0    0     6      0      0 --:--:--  0:00:07 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:08 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:09 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:10 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:11 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:12 --:--:--     0100     6    0     0    0     6      0      0 --:--:--  0:00:13 --:--:--     0100     6    0     0    0     6      0      0 --:--:--  0:00:14 --:--:--     0* Rebuilt URL to: 100.0.0.45/
+* Hostname was NOT found in DNS cache
+*   Trying 100.0.0.45...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0* Connected to 100.0.0.45 (100.0.0.45) port 80 (#0)
+> PUT / HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: 100.0.0.45
+> Accept: */*
+> Content-Length: 6
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 6 out of 6 bytes
+100     6    0     0    0     6      0      0 --:--:--  0:00:07 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:08 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:09 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:10 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:11 --:--:--     1100     6    0     0    0     6      0      0 --:--:--  0:00:12 --:--:--     0100     6    0     0    0     6      0      0 --:--:--  0:00:13 --:--:--     0100     6    0     0    0     6      0      0 --:--:--  0:00:14 --:--:--     05. HTTP GET
+--2016-05-25 23:42:16--  http://100.0.0.45/
+Connecting to 100.0.0.45:80... connected.
+HTTP request sent, awaiting response... 

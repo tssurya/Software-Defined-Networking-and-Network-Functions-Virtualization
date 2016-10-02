@@ -1,0 +1,222 @@
+=========================
+h1(100.0.0.10) ping h2(100.0.0.11)
+=========================
+--- 100.0.0.11 ping statistics ---
+transmitted =  5
+received =  5
+packet loss percent =  0%
+PASS
+=========================
+h1(100.0.0.10) ping dnslb(100.0.0.25)
+=========================
+--- 100.0.0.25 ping statistics ---
+transmitted =  5
+received =  4
+packet loss percent =  20%
+PASS
+=========================
+h1(100.0.0.10) ping wwwlb(100.0.0.45)
+=========================
+--- 100.0.0.45 ping statistics ---
+transmitted =  30
+received =  24
+packet loss percent =  +3
+PASS
+=========================
+h1(100.0.0.10) ping napt(100.0.0.1)
+=========================
+--- 100.0.0.1 ping statistics ---
+transmitted =  5
+received =  4
+packet loss percent =  20%
+PASS
+=========================
+h1(100.0.0.10) ping h3(10.0.0.50)
+connect: Network is unreachable
+=========================
+h1(100.0.0.10) ping h4(10.0.0.51)
+connect: Network is unreachable
+=========================
+h1(100.0.0.10) ping ds1(100.0.0.20)
+=========================
+--- 100.0.0.20 ping statistics ---
+transmitted =  5
+received =  0
+packet loss percent =  100%
+PASS
+=========================
+h1(100.0.0.10) ping ws1(100.0.0.40)
+=========================
+--- 100.0.0.40 ping statistics ---
+transmitted =  5
+received =  0
+packet loss percent =  100%
+PASS
+=========================
+h2(100.0.0.11) ping h1(100.0.0.10)
+=========================
+--- 100.0.0.10 ping statistics ---
+transmitted =  5
+received =  5
+packet loss percent =  0%
+PASS
+=========================
+h2(100.0.0.11) ping dnslb(100.0.0.25)
+=========================
+--- 100.0.0.25 ping statistics ---
+transmitted =  5
+received =  5
+packet loss percent =  0%
+PASS
+=========================
+h2(100.0.0.11) ping wwwlb(100.0.0.45)
+=========================
+--- 100.0.0.45 ping statistics ---
+transmitted =  30
+received =  24
+packet loss percent =  +3
+PASS
+=========================
+h2(100.0.0.11) ping napt(100.0.0.1)
+=========================
+--- 100.0.0.1 ping statistics ---
+transmitted =  5
+received =  4
+packet loss percent =  20%
+PASS
+=========================
+h2(100.0.0.11) ping h3(10.0.0.50)
+connect: Network is unreachable
+=========================
+h2(100.0.0.11) ping h4(10.0.0.51)
+connect: Network is unreachable
+=========================
+h2(100.0.0.11) ping ds1(100.0.0.20)
+=========================
+--- 100.0.0.20 ping statistics ---
+transmitted =  5
+received =  0
+packet loss percent =  100%
+PASS
+=========================
+h2(100.0.0.11) ping ws1(100.0.0.40)
+=========================
+--- 100.0.0.40 ping statistics ---
+transmitted =  5
+received =  0
+packet loss percent =  100%
+PASS
+=========================
+h3(10.0.0.50) ping h4(10.0.0.51)
+=========================
+--- 10.0.0.51 ping statistics ---
+transmitted =  5
+received =  5
+packet loss percent =  0%
+PASS
+=========================
+h3(10.0.0.50) ping h1(100.0.0.10)
+=========================
+--- 100.0.0.10 ping statistics ---
+transmitted =  5
+received =  5
+packet loss percent =  0%
+PASS
+=========================
+h3(10.0.0.50) ping h2(100.0.0.11)
+=========================
+--- 100.0.0.11 ping statistics ---
+transmitted =  5
+received =  5
+packet loss percent =  0%
+PASS
+=========================
+h3(10.0.0.50) ping dnslb(100.0.0.25)
+=========================
+--- 100.0.0.25 ping statistics ---
+transmitted =  30
+received =  26
+packet loss percent =  13%
+PASS
+=========================
+h3(10.0.0.50) ping wwwlb(100.0.0.45)
+=========================
+--- 100.0.0.45 ping statistics ---
+transmitted =  30
+received =  24
+packet loss percent =  20%
+PASS
+=========================
+h3(10.0.0.50) ping ds1(100.0.0.20)
+=========================
+--- 100.0.0.20 ping statistics ---
+transmitted =  5
+received =  0
+packet loss percent =  100%
+PASS
+=========================
+h3(10.0.0.50) ping ws1(100.0.0.40)
+=========================
+--- 100.0.0.40 ping statistics ---
+transmitted =  5
+received =  0
+packet loss percent =  100%
+PASS
+=========================
+h4(10.0.0.51) ping h3(10.0.0.50)
+=========================
+--- 10.0.0.50 ping statistics ---
+transmitted =  5
+received =  5
+packet loss percent =  0%
+PASS
+=========================
+h4(10.0.0.51) ping h1(100.0.0.10)
+=========================
+--- 100.0.0.10 ping statistics ---
+transmitted =  5
+received =  4
+packet loss percent =  20%
+PASS
+=========================
+h4(10.0.0.51) ping h2(100.0.0.11)
+=========================
+--- 100.0.0.11 ping statistics ---
+transmitted =  5
+received =  4
+packet loss percent =  20%
+PASS
+=========================
+h4(10.0.0.51) ping dnslb(100.0.0.25)
+=========================
+--- 100.0.0.25 ping statistics ---
+transmitted =  5
+received =  3
+packet loss percent =  40%
+PASS
+=========================
+h4(10.0.0.51) ping wwwlb(100.0.0.45)
+=========================
+--- 100.0.0.45 ping statistics ---
+transmitted =  30
+received =  23
+packet loss percent =  23%
+PASS
+=========================
+h4(10.0.0.51) ping ds1(100.0.0.20)
+=========================
+--- 100.0.0.20 ping statistics ---
+transmitted =  5
+received =  0
+packet loss percent =  100%
+PASS
+=========================
+h4(10.0.0.51) ping ws1(100.0.0.40)
+=========================
+--- 100.0.0.40 ping statistics ---
+transmitted =  5
+received =  0
+packet loss percent =  100%
+PASS
+
+All tests passed

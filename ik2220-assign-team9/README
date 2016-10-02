@@ -1,0 +1,96 @@
+Team 9 
+IK2220 SDN and NFV - VT16
+
+README of the solutions submitted
+
+Disclaimer : All command should be run in root privilege.
+
+1. Mininet
+==========================
+Command to build the topology -> make topo. It should be run from inside directory </home/ik2220-assign-team9/topology>
+To clean the topology -> make clean. It should be run from inside directory </home/ik2220-assign-team9/topology>
+
+2. SDN and NFV Application
+===========================
+
+Disclaimer : We consider the path or directory environment is exactly the same as in the VM provided, where :
+	- pox.py location is at /home/click/pox/pox.py
+	- click binary file can be acessed from anywhere 
+
+Command to run the NFV and SDN application -> make app. It should be run from inside directory </home/ik2220-assign-team9/application>
+Command to clean the NFV and SDN application -> make clean. It should be run from inside directory </home/ik2220-assign-team9/application>
+
+The output log(s) are generated in </var/log> directory :
+	- pox.log 	-> pox log
+	- idsclick.log	-> ids log
+	- dnsclick.log	-> dns lb (lb1) log
+	- wwwclick.log	-> www lb (lb2) log
+	- natclick.log	-> napt log
+
+3. Result
+============================
+
+3a. Task1
+===========
+Contains three files :
+	- topology.py -> file topology for task1
+	- task1.log -> output from stdout of task1
+	- task1.pcap -> dump file for task1
+	- task1.question -> the answer of task1 question from requirements document
+
+3b. Task2
+============
+Contains two files :
+	- topology.py -> file topology for task2
+	- learning_switch_task2.py -> the firewall implementation for task2
+	- task2.log -> stdout log
+
+3c. Task3
+=============
+Disclaimer : Most of the tests under this section are using mininet m utility, which is located in </home/click/mininet/util/m>, and we assume that mininet m utility is located in this very same path, wherever it run from.
+
+Contains two test cases :
+1. Connectivity test -> test all the connection between one host and another
+There are 4 files :
+	- connectivity.sh -> the script to run the connectivity cases between host(s) and/or server(s) and/or load balancer(s)
+	- ping.log -> stdout from connectivity.sh which is redirected to a file
+		if connectivity.sh is run, then ping.log would be generated in </var/log>
+	- test.py -> python script to parse the stdout (ping.log) into a good looking result
+	- connectivity_test_results -> the output result for all the test above
+
+2. Service test -> test the service provided by server on DMZ area
+
+Services test can be done by running service.sh. It will test the following :
+1. DNS server functionality
+2. WWW server functionality
+3. Round robin functionality of load balancer
+4. IDS functionality, contains 5 tests
+
+Files :
+resultservice.log 	-> Contains result summary of the whole service test (either PASS or FAIL)
+service.log 		-> Contains log file of service test.
+servicedns.log 		-> Contains result of dig command in test 1 (DNS functionality)
+servicewww.log		-> Contains result of curl command in test 2 (WWW server functionality)
+
+servdnschecker.py 		-> Contains analyzer script to determine whether test 1 (DNS functionality test) is succesful or not.
+servwwwchecker.py		-> Contains analyzer script to determine whether test 2 (WWW functionality test) is succesful or not.
+rrdnschecker.py			-> Contains analyzer script to determine whether test 3 (Round robin functionality test) is succesful or not.
+analyzer1.py to analyzer5.py	-> Contains analyzer script to determine whether IDS functionality test is succesful or not. There are 5 files, one for each test inside IDS functionality test.
+
+61.pcap		-> Contains tcpdump capture file of s6-eth1 (IDS, interface facing SW2)	-> this file would always reloaded every ids test is run
+62.pcap		-> Contains tcpdump capture file of s6-eth2 (IDS, interface facing LB2)	-> this file would always reloaded every ids test is run
+63.pcap		-> Contains tcpdump capture file of s6-eth3 (IDS, interface facing INSP) -> this file would always reloaded every ids test is run
+71.pcap		-> Contains tcpdump capture file of s7-eth1 (LB2, interface facing IDS)
+72.pcap		-> Contains tcpdump capture file of s7-eth2 (LB2, interface facing SW4)
+insptest1.pcap	-> Contains tcpdump capture file of h11-eth0 (INSP) during IDS test 1
+insptest2.pcap	-> Contains tcpdump capture file of h11-eth0 (INSP) during IDS test 2
+insptest3.pcap	-> Contains tcpdump capture file of h11-eth0 (INSP) during IDS test 3
+insptest4.pcap	-> Contains tcpdump capture file of h11-eth0 (INSP) during IDS test 4
+insptest5.pcap	-> Contains tcpdump capture file of h11-eth0 (INSP) during IDS test 5
+
+3d. Task4
+=============
+a set of files that assess the performance of each of Click­based network function. Basically, all of this are implemented along with the click configuration itself, in each entity (ids, lb1, lb2, napt). There are two kind of files :
+	- <service>.report -> sample report of each entity
+	- <service>.click -> click configuration of each entity
+As requested in the document, report file is generated once the click module terminates.

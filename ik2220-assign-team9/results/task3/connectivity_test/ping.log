@@ -1,0 +1,369 @@
+h1(100.0.0.10) ping h2(100.0.0.11)
+PING 100.0.0.11 (100.0.0.11) 56(84) bytes of data.
+64 bytes from 100.0.0.11: icmp_seq=1 ttl=64 time=13.0 ms
+64 bytes from 100.0.0.11: icmp_seq=2 ttl=64 time=0.101 ms
+64 bytes from 100.0.0.11: icmp_seq=3 ttl=64 time=0.036 ms
+64 bytes from 100.0.0.11: icmp_seq=4 ttl=64 time=0.024 ms
+64 bytes from 100.0.0.11: icmp_seq=5 ttl=64 time=0.038 ms
+
+--- 100.0.0.11 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 3999ms
+rtt min/avg/max/mdev = 0.024/2.655/13.077/5.211 ms
+h1(100.0.0.10) ping dnslb(100.0.0.25)
+PING 100.0.0.25 (100.0.0.25) 56(84) bytes of data.
+64 bytes from 100.0.0.25: icmp_seq=1 ttl=255 time=3000 ms
+64 bytes from 100.0.0.25: icmp_seq=2 ttl=255 time=2001 ms
+64 bytes from 100.0.0.25: icmp_seq=3 ttl=255 time=1001 ms
+64 bytes from 100.0.0.25: icmp_seq=4 ttl=255 time=1002 ms
+
+--- 100.0.0.25 ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 4000ms
+rtt min/avg/max/mdev = 1001.504/1751.575/3000.695/828.666 ms, pipe 4
+h1(100.0.0.10) ping wwwlb(100.0.0.45)
+PING 100.0.0.45 (100.0.0.45) 56(84) bytes of data.
+From 100.0.0.10 icmp_seq=1 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=2 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=3 Destination Host Unreachable
+64 bytes from 100.0.0.10: icmp_seq=4 ttl=255 time=6039 ms
+64 bytes from 100.0.0.10: icmp_seq=5 ttl=255 time=5039 ms
+64 bytes from 100.0.0.10: icmp_seq=6 ttl=255 time=4040 ms
+64 bytes from 100.0.0.10: icmp_seq=7 ttl=255 time=3040 ms
+64 bytes from 100.0.0.10: icmp_seq=8 ttl=255 time=2040 ms
+64 bytes from 100.0.0.10: icmp_seq=9 ttl=255 time=3010 ms
+64 bytes from 100.0.0.10: icmp_seq=10 ttl=255 time=3018 ms
+64 bytes from 100.0.0.10: icmp_seq=11 ttl=255 time=3025 ms
+64 bytes from 100.0.0.10: icmp_seq=12 ttl=255 time=3024 ms
+64 bytes from 100.0.0.10: icmp_seq=13 ttl=255 time=3024 ms
+64 bytes from 100.0.0.10: icmp_seq=14 ttl=255 time=3024 ms
+64 bytes from 100.0.0.10: icmp_seq=15 ttl=255 time=3024 ms
+64 bytes from 100.0.0.10: icmp_seq=16 ttl=255 time=3024 ms
+64 bytes from 100.0.0.10: icmp_seq=17 ttl=255 time=3024 ms
+64 bytes from 100.0.0.10: icmp_seq=18 ttl=255 time=3024 ms
+64 bytes from 100.0.0.10: icmp_seq=19 ttl=255 time=3024 ms
+64 bytes from 100.0.0.10: icmp_seq=20 ttl=255 time=3025 ms
+64 bytes from 100.0.0.10: icmp_seq=21 ttl=255 time=3019 ms
+64 bytes from 100.0.0.10: icmp_seq=22 ttl=255 time=3012 ms
+64 bytes from 100.0.0.10: icmp_seq=23 ttl=255 time=3004 ms
+64 bytes from 100.0.0.10: icmp_seq=24 ttl=255 time=3011 ms
+64 bytes from 100.0.0.10: icmp_seq=25 ttl=255 time=3012 ms
+64 bytes from 100.0.0.10: icmp_seq=26 ttl=255 time=3011 ms
+64 bytes from 100.0.0.10: icmp_seq=27 ttl=255 time=3005 ms
+
+--- 100.0.0.45 ping statistics ---
+30 packets transmitted, 24 received, +3 errors, 20% packet loss, time 29113ms
+rtt min/avg/max/mdev = 2040.407/3231.366/6039.546/767.215 ms, pipe 7
+h1(100.0.0.10) ping napt(100.0.0.1)
+PING 100.0.0.1 (100.0.0.1) 56(84) bytes of data.
+64 bytes from 100.0.0.1: icmp_seq=1 ttl=255 time=4021 ms
+64 bytes from 100.0.0.1: icmp_seq=2 ttl=255 time=3019 ms
+64 bytes from 100.0.0.1: icmp_seq=3 ttl=255 time=2010 ms
+64 bytes from 100.0.0.1: icmp_seq=4 ttl=255 time=1002 ms
+
+--- 100.0.0.1 ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 4020ms
+rtt min/avg/max/mdev = 1002.808/2513.499/4021.371/1125.193 ms, pipe 5
+h1(100.0.0.10) ping h3(10.0.0.50)
+connect: Network is unreachable
+h1(100.0.0.10) ping h4(10.0.0.51)
+connect: Network is unreachable
+h1(100.0.0.10) ping ds1(100.0.0.20)
+PING 100.0.0.20 (100.0.0.20) 56(84) bytes of data.
+From 100.0.0.10 icmp_seq=1 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=2 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=3 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=4 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=5 Destination Host Unreachable
+
+--- 100.0.0.20 ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4014ms
+pipe 3
+h1(100.0.0.10) ping ws1(100.0.0.40)
+PING 100.0.0.40 (100.0.0.40) 56(84) bytes of data.
+From 100.0.0.10 icmp_seq=1 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=2 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=3 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=4 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=5 Destination Host Unreachable
+
+--- 100.0.0.40 ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4000ms
+pipe 3
+h2(100.0.0.11) ping h1(100.0.0.10)
+PING 100.0.0.10 (100.0.0.10) 56(84) bytes of data.
+64 bytes from 100.0.0.10: icmp_seq=1 ttl=64 time=41.3 ms
+64 bytes from 100.0.0.10: icmp_seq=2 ttl=64 time=0.207 ms
+64 bytes from 100.0.0.10: icmp_seq=3 ttl=64 time=0.037 ms
+64 bytes from 100.0.0.10: icmp_seq=4 ttl=64 time=0.036 ms
+64 bytes from 100.0.0.10: icmp_seq=5 ttl=64 time=0.037 ms
+
+--- 100.0.0.10 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4001ms
+rtt min/avg/max/mdev = 0.036/8.334/41.353/16.509 ms
+h2(100.0.0.11) ping dnslb(100.0.0.25)
+PING 100.0.0.25 (100.0.0.25) 56(84) bytes of data.
+64 bytes from 100.0.0.25: icmp_seq=1 ttl=255 time=4032 ms
+64 bytes from 100.0.0.25: icmp_seq=2 ttl=255 time=3024 ms
+64 bytes from 100.0.0.25: icmp_seq=3 ttl=255 time=2016 ms
+64 bytes from 100.0.0.25: icmp_seq=4 ttl=255 time=1009 ms
+64 bytes from 100.0.0.25: icmp_seq=5 ttl=255 time=33.9 ms
+
+--- 100.0.0.25 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4032ms
+rtt min/avg/max/mdev = 33.914/2023.378/4032.945/1416.098 ms, pipe 5
+h2(100.0.0.11) ping wwwlb(100.0.0.45)
+PING 100.0.0.45 (100.0.0.45) 56(84) bytes of data.
+From 100.0.0.11 icmp_seq=1 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=2 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=3 Destination Host Unreachable
+64 bytes from 100.0.0.11: icmp_seq=4 ttl=255 time=7041 ms
+64 bytes from 100.0.0.11: icmp_seq=5 ttl=255 time=6033 ms
+64 bytes from 100.0.0.11: icmp_seq=6 ttl=255 time=5026 ms
+64 bytes from 100.0.0.11: icmp_seq=7 ttl=255 time=4018 ms
+64 bytes from 100.0.0.11: icmp_seq=8 ttl=255 time=3010 ms
+64 bytes from 100.0.0.11: icmp_seq=9 ttl=255 time=3003 ms
+64 bytes from 100.0.0.11: icmp_seq=10 ttl=255 time=3010 ms
+64 bytes from 100.0.0.11: icmp_seq=11 ttl=255 time=3018 ms
+64 bytes from 100.0.0.11: icmp_seq=12 ttl=255 time=3027 ms
+64 bytes from 100.0.0.11: icmp_seq=13 ttl=255 time=3019 ms
+64 bytes from 100.0.0.11: icmp_seq=14 ttl=255 time=3013 ms
+64 bytes from 100.0.0.11: icmp_seq=15 ttl=255 time=3005 ms
+64 bytes from 100.0.0.11: icmp_seq=16 ttl=255 time=3007 ms
+64 bytes from 100.0.0.11: icmp_seq=17 ttl=255 time=3005 ms
+64 bytes from 100.0.0.11: icmp_seq=18 ttl=255 time=3010 ms
+64 bytes from 100.0.0.11: icmp_seq=19 ttl=255 time=3016 ms
+64 bytes from 100.0.0.11: icmp_seq=20 ttl=255 time=2856 ms
+64 bytes from 100.0.0.11: icmp_seq=21 ttl=255 time=3017 ms
+64 bytes from 100.0.0.11: icmp_seq=22 ttl=255 time=3010 ms
+64 bytes from 100.0.0.11: icmp_seq=23 ttl=255 time=3009 ms
+64 bytes from 100.0.0.11: icmp_seq=24 ttl=255 time=3002 ms
+64 bytes from 100.0.0.11: icmp_seq=25 ttl=255 time=3001 ms
+64 bytes from 100.0.0.11: icmp_seq=26 ttl=255 time=3003 ms
+64 bytes from 100.0.0.11: icmp_seq=27 ttl=255 time=3003 ms
+
+--- 100.0.0.45 ping statistics ---
+30 packets transmitted, 24 received, +3 errors, 20% packet loss, time 29103ms
+rtt min/avg/max/mdev = 2856.781/3424.007/7041.866/1048.711 ms, pipe 8
+h2(100.0.0.11) ping napt(100.0.0.1)
+PING 100.0.0.1 (100.0.0.1) 56(84) bytes of data.
+64 bytes from 100.0.0.1: icmp_seq=1 ttl=255 time=4020 ms
+64 bytes from 100.0.0.1: icmp_seq=2 ttl=255 time=3019 ms
+64 bytes from 100.0.0.1: icmp_seq=3 ttl=255 time=2012 ms
+64 bytes from 100.0.0.1: icmp_seq=4 ttl=255 time=1004 ms
+
+--- 100.0.0.1 ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 4018ms
+rtt min/avg/max/mdev = 1004.865/2514.250/4020.000/1123.954 ms, pipe 5
+h2(100.0.0.11) ping h3(10.0.0.50)
+connect: Network is unreachable
+h2(100.0.0.11) ping h4(10.0.0.51)
+connect: Network is unreachable
+h2(100.0.0.11) ping ds1(100.0.0.20)
+PING 100.0.0.20 (100.0.0.20) 56(84) bytes of data.
+From 100.0.0.11 icmp_seq=1 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=2 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=3 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=4 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=5 Destination Host Unreachable
+
+--- 100.0.0.20 ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4024ms
+pipe 3
+h2(100.0.0.11) ping ws1(100.0.0.40)
+PING 100.0.0.40 (100.0.0.40) 56(84) bytes of data.
+From 100.0.0.11 icmp_seq=1 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=2 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=3 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=4 Destination Host Unreachable
+From 100.0.0.11 icmp_seq=5 Destination Host Unreachable
+
+--- 100.0.0.40 ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4000ms
+pipe 3
+h3(10.0.0.50) ping h4(10.0.0.51)
+PING 10.0.0.51 (10.0.0.51) 56(84) bytes of data.
+64 bytes from 10.0.0.51: icmp_seq=1 ttl=64 time=19.6 ms
+64 bytes from 10.0.0.51: icmp_seq=2 ttl=64 time=0.123 ms
+64 bytes from 10.0.0.51: icmp_seq=3 ttl=64 time=0.035 ms
+64 bytes from 10.0.0.51: icmp_seq=4 ttl=64 time=0.037 ms
+64 bytes from 10.0.0.51: icmp_seq=5 ttl=64 time=0.036 ms
+
+--- 10.0.0.51 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 3999ms
+rtt min/avg/max/mdev = 0.035/3.976/19.652/7.838 ms
+h3(10.0.0.50) ping h1(100.0.0.10)
+PING 100.0.0.10 (100.0.0.10) 56(84) bytes of data.
+64 bytes from 100.0.0.10: icmp_seq=1 ttl=64 time=9006 ms
+64 bytes from 100.0.0.10: icmp_seq=2 ttl=64 time=8006 ms
+64 bytes from 100.0.0.10: icmp_seq=3 ttl=64 time=7006 ms
+64 bytes from 100.0.0.10: icmp_seq=4 ttl=64 time=6006 ms
+64 bytes from 100.0.0.10: icmp_seq=5 ttl=64 time=6005 ms
+
+--- 100.0.0.10 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4000ms
+rtt min/avg/max/mdev = 6005.921/7206.286/9006.196/1166.214 ms, pipe 5
+h3(10.0.0.50) ping h2(100.0.0.11)
+PING 100.0.0.11 (100.0.0.11) 56(84) bytes of data.
+64 bytes from 100.0.0.11: icmp_seq=1 ttl=64 time=2017 ms
+64 bytes from 100.0.0.11: icmp_seq=2 ttl=64 time=2010 ms
+64 bytes from 100.0.0.11: icmp_seq=3 ttl=64 time=2003 ms
+64 bytes from 100.0.0.11: icmp_seq=4 ttl=64 time=2996 ms
+64 bytes from 100.0.0.11: icmp_seq=5 ttl=64 time=2997 ms
+
+--- 100.0.0.11 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4018ms
+rtt min/avg/max/mdev = 2003.158/2405.106/2997.294/483.363 ms, pipe 3
+h3(10.0.0.50) ping dnslb(100.0.0.25)
+PING 100.0.0.25 (100.0.0.25) 56(84) bytes of data.
+64 bytes from 100.0.0.25: icmp_seq=2 ttl=255 time=8002 ms
+64 bytes from 100.0.0.25: icmp_seq=3 ttl=255 time=7003 ms
+64 bytes from 100.0.0.25: icmp_seq=4 ttl=255 time=6003 ms
+64 bytes from 100.0.0.25: icmp_seq=5 ttl=255 time=5003 ms
+64 bytes from 100.0.0.25: icmp_seq=6 ttl=255 time=4003 ms
+64 bytes from 100.0.0.25: icmp_seq=7 ttl=255 time=3004 ms
+64 bytes from 100.0.0.25: icmp_seq=8 ttl=255 time=3001 ms
+64 bytes from 100.0.0.25: icmp_seq=9 ttl=255 time=3003 ms
+64 bytes from 100.0.0.25: icmp_seq=10 ttl=255 time=3005 ms
+64 bytes from 100.0.0.25: icmp_seq=11 ttl=255 time=3006 ms
+64 bytes from 100.0.0.25: icmp_seq=12 ttl=255 time=3012 ms
+64 bytes from 100.0.0.25: icmp_seq=13 ttl=255 time=3020 ms
+64 bytes from 100.0.0.25: icmp_seq=14 ttl=255 time=3019 ms
+64 bytes from 100.0.0.25: icmp_seq=15 ttl=255 time=3013 ms
+64 bytes from 100.0.0.25: icmp_seq=16 ttl=255 time=3006 ms
+64 bytes from 100.0.0.25: icmp_seq=17 ttl=255 time=3006 ms
+64 bytes from 100.0.0.25: icmp_seq=18 ttl=255 time=3007 ms
+64 bytes from 100.0.0.25: icmp_seq=19 ttl=255 time=3004 ms
+64 bytes from 100.0.0.25: icmp_seq=20 ttl=255 time=3011 ms
+64 bytes from 100.0.0.25: icmp_seq=21 ttl=255 time=3011 ms
+64 bytes from 100.0.0.25: icmp_seq=22 ttl=255 time=3011 ms
+64 bytes from 100.0.0.25: icmp_seq=23 ttl=255 time=3006 ms
+64 bytes from 100.0.0.25: icmp_seq=24 ttl=255 time=3005 ms
+64 bytes from 100.0.0.25: icmp_seq=25 ttl=255 time=3007 ms
+64 bytes from 100.0.0.25: icmp_seq=26 ttl=255 time=3006 ms
+64 bytes from 100.0.0.25: icmp_seq=27 ttl=255 time=3005 ms
+
+--- 100.0.0.25 ping statistics ---
+30 packets transmitted, 26 received, 13% packet loss, time 29048ms
+rtt min/avg/max/mdev = 3001.889/3584.335/8002.499/1333.255 ms, pipe 9
+h3(10.0.0.50) ping wwwlb(100.0.0.45)
+PING 100.0.0.45 (100.0.0.45) 56(84) bytes of data.
+64 bytes from 100.0.0.45: icmp_seq=2 ttl=255 time=13999 ms
+64 bytes from 100.0.0.45: icmp_seq=8 ttl=255 time=8001 ms
+64 bytes from 100.0.0.45: icmp_seq=3 ttl=255 time=13001 ms
+64 bytes from 100.0.0.45: icmp_seq=4 ttl=255 time=12001 ms
+64 bytes from 100.0.0.45: icmp_seq=5 ttl=255 time=11001 ms
+64 bytes from 100.0.0.45: icmp_seq=6 ttl=255 time=10002 ms
+64 bytes from 100.0.0.45: icmp_seq=7 ttl=255 time=9002 ms
+64 bytes from 100.0.0.45: icmp_seq=9 ttl=255 time=7002 ms
+64 bytes from 100.0.0.45: icmp_seq=10 ttl=255 time=6002 ms
+64 bytes from 100.0.0.45: icmp_seq=11 ttl=255 time=5002 ms
+64 bytes from 100.0.0.45: icmp_seq=12 ttl=255 time=4002 ms
+64 bytes from 100.0.0.45: icmp_seq=13 ttl=255 time=4001 ms
+64 bytes from 100.0.0.45: icmp_seq=14 ttl=255 time=4010 ms
+64 bytes from 100.0.0.45: icmp_seq=15 ttl=255 time=5026 ms
+64 bytes from 100.0.0.45: icmp_seq=16 ttl=255 time=5034 ms
+64 bytes from 100.0.0.45: icmp_seq=17 ttl=255 time=5042 ms
+64 bytes from 100.0.0.45: icmp_seq=18 ttl=255 time=5035 ms
+64 bytes from 100.0.0.45: icmp_seq=19 ttl=255 time=5027 ms
+64 bytes from 100.0.0.45: icmp_seq=20 ttl=255 time=5020 ms
+64 bytes from 100.0.0.45: icmp_seq=21 ttl=255 time=5020 ms
+64 bytes from 100.0.0.45: icmp_seq=22 ttl=255 time=5022 ms
+64 bytes from 100.0.0.45: icmp_seq=23 ttl=255 time=5021 ms
+64 bytes from 100.0.0.45: icmp_seq=24 ttl=255 time=5020 ms
+64 bytes from 100.0.0.45: icmp_seq=25 ttl=255 time=5021 ms
+
+--- 100.0.0.45 ping statistics ---
+30 packets transmitted, 24 received, 20% packet loss, time 29066ms
+rtt min/avg/max/mdev = 4001.715/6763.610/13999.941/2982.367 ms, pipe 15
+h3(10.0.0.50) ping ds1(100.0.0.20)
+PING 100.0.0.20 (100.0.0.20) 56(84) bytes of data.
+
+--- 100.0.0.20 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4002ms
+
+h3(10.0.0.50) ping ws1(100.0.0.40)
+PING 100.0.0.40 (100.0.0.40) 56(84) bytes of data.
+
+--- 100.0.0.40 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 3999ms
+
+h4(10.0.0.51) ping h3(10.0.0.50)
+PING 10.0.0.50 (10.0.0.50) 56(84) bytes of data.
+64 bytes from 10.0.0.50: icmp_seq=1 ttl=64 time=43.0 ms
+64 bytes from 10.0.0.50: icmp_seq=2 ttl=64 time=0.179 ms
+64 bytes from 10.0.0.50: icmp_seq=3 ttl=64 time=0.039 ms
+64 bytes from 10.0.0.50: icmp_seq=4 ttl=64 time=0.037 ms
+64 bytes from 10.0.0.50: icmp_seq=5 ttl=64 time=0.038 ms
+
+--- 10.0.0.50 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4001ms
+rtt min/avg/max/mdev = 0.037/8.674/43.077/17.201 ms
+h4(10.0.0.51) ping h1(100.0.0.10)
+PING 100.0.0.10 (100.0.0.10) 56(84) bytes of data.
+64 bytes from 100.0.0.10: icmp_seq=2 ttl=64 time=3000 ms
+64 bytes from 100.0.0.10: icmp_seq=4 ttl=64 time=1000 ms
+64 bytes from 100.0.0.10: icmp_seq=3 ttl=64 time=2000 ms
+64 bytes from 100.0.0.10: icmp_seq=5 ttl=64 time=5048 ms
+
+--- 100.0.0.10 ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 4000ms
+rtt min/avg/max/mdev = 1000.878/2762.741/5048.779/1497.253 ms, pipe 4
+h4(10.0.0.51) ping h2(100.0.0.11)
+PING 100.0.0.11 (100.0.0.11) 56(84) bytes of data.
+64 bytes from 100.0.0.11: icmp_seq=2 ttl=64 time=3000 ms
+64 bytes from 100.0.0.11: icmp_seq=4 ttl=64 time=1000 ms
+64 bytes from 100.0.0.11: icmp_seq=3 ttl=64 time=2000 ms
+64 bytes from 100.0.0.11: icmp_seq=5 ttl=64 time=5048 ms
+
+--- 100.0.0.11 ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 4000ms
+rtt min/avg/max/mdev = 1000.878/2762.741/5048.779/1497.253 ms, pipe 4
+h4(10.0.0.51) ping dnslb(100.0.0.25)
+PING 100.0.0.25 (100.0.0.25) 56(84) bytes of data.
+64 bytes from 100.0.0.25: icmp_seq=2 ttl=255 time=3061 ms
+64 bytes from 100.0.0.25: icmp_seq=3 ttl=255 time=2996 ms
+64 bytes from 100.0.0.25: icmp_seq=4 ttl=255 time=2986 ms
+
+--- 100.0.0.25 ping statistics ---
+5 packets transmitted, 3 received, 40% packet loss, time 4032ms
+rtt min/avg/max/mdev = 2986.295/3014.725/3061.229/33.153 ms, pipe 4
+h4(10.0.0.51) ping wwwlb(100.0.0.45)
+PING 100.0.0.45 (100.0.0.45) 56(84) bytes of data.
+64 bytes from 100.0.0.45: icmp_seq=3 ttl=255 time=5003 ms
+64 bytes from 100.0.0.45: icmp_seq=4 ttl=255 time=5002 ms
+64 bytes from 100.0.0.45: icmp_seq=5 ttl=255 time=5010 ms
+64 bytes from 100.0.0.45: icmp_seq=6 ttl=255 time=5024 ms
+64 bytes from 100.0.0.45: icmp_seq=7 ttl=255 time=5021 ms
+64 bytes from 100.0.0.45: icmp_seq=8 ttl=255 time=5025 ms
+64 bytes from 100.0.0.45: icmp_seq=9 ttl=255 time=5023 ms
+64 bytes from 100.0.0.45: icmp_seq=10 ttl=255 time=4014 ms
+64 bytes from 100.0.0.45: icmp_seq=11 ttl=255 time=6025 ms
+64 bytes from 100.0.0.45: icmp_seq=12 ttl=255 time=5023 ms
+64 bytes from 100.0.0.45: icmp_seq=13 ttl=255 time=5024 ms
+64 bytes from 100.0.0.45: icmp_seq=14 ttl=255 time=5025 ms
+64 bytes from 100.0.0.45: icmp_seq=15 ttl=255 time=5025 ms
+64 bytes from 100.0.0.45: icmp_seq=16 ttl=255 time=5017 ms
+64 bytes from 100.0.0.45: icmp_seq=17 ttl=255 time=5012 ms
+64 bytes from 100.0.0.45: icmp_seq=18 ttl=255 time=5011 ms
+64 bytes from 100.0.0.45: icmp_seq=19 ttl=255 time=5009 ms
+64 bytes from 100.0.0.45: icmp_seq=20 ttl=255 time=5016 ms
+64 bytes from 100.0.0.45: icmp_seq=21 ttl=255 time=5017 ms
+64 bytes from 100.0.0.45: icmp_seq=22 ttl=255 time=5015 ms
+64 bytes from 100.0.0.45: icmp_seq=23 ttl=255 time=5015 ms
+64 bytes from 100.0.0.45: icmp_seq=24 ttl=255 time=5013 ms
+64 bytes from 100.0.0.45: icmp_seq=25 ttl=255 time=5006 ms
+
+--- 100.0.0.45 ping statistics ---
+30 packets transmitted, 23 received, 23% packet loss, time 29068ms
+rtt min/avg/max/mdev = 4014.951/5016.901/6025.103/296.471 ms, pipe 7
+h4(10.0.0.51) ping ds1(100.0.0.20)
+PING 100.0.0.20 (100.0.0.20) 56(84) bytes of data.
+
+--- 100.0.0.20 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4031ms
+
+h4(10.0.0.51) ping ws1(100.0.0.40)
+PING 100.0.0.40 (100.0.0.40) 56(84) bytes of data.
+
+--- 100.0.0.40 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4000ms
+

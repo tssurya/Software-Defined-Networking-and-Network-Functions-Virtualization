@@ -1,0 +1,14 @@
+===============IDS Report=================
+Input Packet rate (pps) :  0.510199715212
+Output Packet rate (pps) :  0.88261271882
+ 
+Total # of input packets :  50
+Total # of output packets : 50
+ 
+Total # of ARP requests :  13
+Total # of ARP response :  4
+ 
+Total # of service packets : 30
+Total # of ICMP packets : 13
+Total # of dropped packets : No dropped packets, malicious packets sent to insp
+=========================================

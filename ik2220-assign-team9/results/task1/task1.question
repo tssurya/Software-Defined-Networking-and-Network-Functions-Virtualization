@@ -1,0 +1,10 @@
+What are the sequential steps (i.e. packet exchanges) that need to be established in order to have a successful ping­pong between h1 and h2? Which entities are involved in each step? 
+
+h1 -> broadcast 	: of_packet_in
+controller -> h1 	: of_packet_out
+h2 -> h1		: of_packet_in
+controller -> h2	: of_flow_add
+h1 -> h2		: of_packet_in
+local -> local		: of_flow_add
+h1 -> h2		: of_echo_req
+h2 -> h1		: of_echo reply

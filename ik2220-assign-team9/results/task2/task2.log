@@ -1,0 +1,284 @@
+1. With all switches as L2 learning, all ping are success
+=======================================================
+root@mininet-vm:/home/mininet/run/task2# sudo mn --custom topology.py --topo mytopo --mac --switch ovsk --controller remote
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (s2, s1) (s2, s3) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+==========================================================
+
+
+After Add Isolation rules :
+1. After turn S2 into a firewall
+==========================================================
+root@mininet-vm:/home/mininet/run/task2# sudo mn --custom topology.py --topo mytopo --mac --switch ovsk --controller remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (s2, s1) (s2, s3) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 X X 
+h2 -> h1 X X 
+h3 -> X X h4 
+h4 -> X X h3 
+*** Results: 66% dropped (4/12 received)
+mininet> h1 ping h3
+PING 100.0.0.50 (100.0.0.50) 56(84) bytes of data.
+From 100.0.0.10 icmp_seq=10 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=11 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=12 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=13 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=14 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=15 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=16 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=17 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=18 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=19 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=20 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=21 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=22 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=23 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=24 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=25 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=26 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=27 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=28 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=29 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=30 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=31 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=32 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=33 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=34 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=35 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=36 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=37 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=38 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=39 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=40 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=41 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=42 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=43 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=44 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=45 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=46 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=47 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=48 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=49 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=50 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=51 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=52 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=53 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=54 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=55 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=56 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=57 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=58 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=59 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=60 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=61 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=62 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=63 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=64 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=65 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=66 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=67 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=68 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=69 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=70 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=71 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=72 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=73 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=74 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=75 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=76 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=77 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=78 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=79 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=80 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=81 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=82 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=83 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=84 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=85 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=86 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=87 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=88 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=89 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=90 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=91 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=92 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=93 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=94 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=95 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=96 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=97 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=98 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=99 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=100 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=101 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=102 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=103 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=104 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=105 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=106 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=107 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=108 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=109 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=110 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=111 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=112 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=113 Destination Host Unreachable
+From 100.0.0.10 icmp_seq=114 Destination Host Unreachable
+^C
+--- 100.0.0.50 ping statistics ---
+115 packets transmitted, 0 received, +105 errors, 100% packet loss, time 114099ms
+pipe 3
+mininet> h3 ping h1
+PING 100.0.0.10 (100.0.0.10) 56(84) bytes of data.
+From 100.0.0.50 icmp_seq=1 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=2 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=3 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=4 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=5 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=6 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=7 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=8 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=9 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=10 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=11 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=12 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=13 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=14 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=15 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=16 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=17 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=18 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=19 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=20 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=21 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=22 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=23 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=24 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=25 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=26 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=27 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=28 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=29 Destination Host Unreachable
+From 100.0.0.50 icmp_seq=30 Destination Host Unreachable
+^C
+--- 100.0.0.10 ping statistics ---
+31 packets transmitted, 0 received, +30 errors, 100% packet loss, time 30047ms
+pipe 3
+
+# But h1 ping h2 is success
+
+mininet> h1 ping h2
+PING 100.0.0.11 (100.0.0.11) 56(84) bytes of data.
+64 bytes from 100.0.0.11: icmp_seq=1 ttl=64 time=24.2 ms
+64 bytes from 100.0.0.11: icmp_seq=2 ttl=64 time=0.263 ms
+64 bytes from 100.0.0.11: icmp_seq=3 ttl=64 time=0.078 ms
+64 bytes from 100.0.0.11: icmp_seq=4 ttl=64 time=0.066 ms
+64 bytes from 100.0.0.11: icmp_seq=5 ttl=64 time=0.058 ms
+64 bytes from 100.0.0.11: icmp_seq=6 ttl=64 time=0.050 ms
+64 bytes from 100.0.0.11: icmp_seq=7 ttl=64 time=0.055 ms
+64 bytes from 100.0.0.11: icmp_seq=8 ttl=64 time=0.060 ms
+64 bytes from 100.0.0.11: icmp_seq=9 ttl=64 time=0.064 ms
+64 bytes from 100.0.0.11: icmp_seq=10 ttl=64 time=0.060 ms
+64 bytes from 100.0.0.11: icmp_seq=11 ttl=64 time=0.097 ms
+64 bytes from 100.0.0.11: icmp_seq=12 ttl=64 time=0.072 ms
+64 bytes from 100.0.0.11: icmp_seq=13 ttl=64 time=0.053 ms
+64 bytes from 100.0.0.11: icmp_seq=14 ttl=64 time=0.055 ms
+64 bytes from 100.0.0.11: icmp_seq=15 ttl=64 time=0.058 ms
+64 bytes from 100.0.0.11: icmp_seq=16 ttl=64 time=0.085 ms
+64 bytes from 100.0.0.11: icmp_seq=17 ttl=64 time=0.056 ms
+64 bytes from 100.0.0.11: icmp_seq=18 ttl=64 time=0.062 ms
+64 bytes from 100.0.0.11: icmp_seq=19 ttl=64 time=0.062 ms
+64 bytes from 100.0.0.11: icmp_seq=20 ttl=64 time=0.060 ms
+64 bytes from 100.0.0.11: icmp_seq=21 ttl=64 time=0.073 ms
+64 bytes from 100.0.0.11: icmp_seq=22 ttl=64 time=0.057 ms
+^C
+--- 100.0.0.11 ping statistics ---
+22 packets transmitted, 22 received, 0% packet loss, time 21007ms
+rtt min/avg/max/mdev = 0.050/1.174/24.294/5.045 ms
+
+# and h3 ping h4 is success as well
+
+mininet> h3 ping h4
+PING 100.0.0.51 (100.0.0.51) 56(84) bytes of data.
+64 bytes from 100.0.0.51: icmp_seq=1 ttl=64 time=54.5 ms
+64 bytes from 100.0.0.51: icmp_seq=2 ttl=64 time=0.163 ms
+64 bytes from 100.0.0.51: icmp_seq=3 ttl=64 time=0.049 ms
+64 bytes from 100.0.0.51: icmp_seq=4 ttl=64 time=0.151 ms
+64 bytes from 100.0.0.51: icmp_seq=5 ttl=64 time=0.066 ms
+64 bytes from 100.0.0.51: icmp_seq=6 ttl=64 time=0.065 ms
+64 bytes from 100.0.0.51: icmp_seq=7 ttl=64 time=0.045 ms
+64 bytes from 100.0.0.51: icmp_seq=8 ttl=64 time=0.048 ms
+64 bytes from 100.0.0.51: icmp_seq=9 ttl=64 time=0.050 ms
+64 bytes from 100.0.0.51: icmp_seq=10 ttl=64 time=0.066 ms
+64 bytes from 100.0.0.51: icmp_seq=11 ttl=64 time=0.066 ms
+64 bytes from 100.0.0.51: icmp_seq=12 ttl=64 time=0.066 ms
+64 bytes from 100.0.0.51: icmp_seq=13 ttl=64 time=0.066 ms
+64 bytes from 100.0.0.51: icmp_seq=14 ttl=64 time=0.066 ms
+^C
+--- 100.0.0.51 ping statistics ---
+14 packets transmitted, 14 received, 0% packet loss, time 13005ms
+rtt min/avg/max/mdev = 0.045/3.967/54.583/14.038 ms
+
+# and now starting iperf on h4 from outside mininet using m utilities
+
+^Croot@mininet-vm:/home/mininet/mininet/util# ./m h4 iperf -s -p 1025
+------------------------------------------------------------
+Server listening on TCP port 1025
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+
+# and sending the iperf connection from h2
+
+mininet> h4 iperf -c 100.0.0.11 -p 1025
+connect failed: No route to host
+
+# and now starting iperf on h2 from outside mininet using m utilities
+
+^Croot@mininet-vm:/home/mininet/mininet/util# ./m h2 iperf -s -p 1025
+------------------------------------------------------------
+Server listening on TCP port 1025
+TCP window size: 85.3 KByte (default)
+
+# and sending the iperf connection from h2
+
+mininet> h4 iperf -c 100.0.0.11 -p 1025
+connect failed: No route to host
+
+========
+end of result
